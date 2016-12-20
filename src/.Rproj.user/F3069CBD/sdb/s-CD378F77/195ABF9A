@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "trim_storage <- function(storage,capacity) {\n\n# storage cases > capacity to capacity \n\nif (max(storage$x) > capacity){\n  excess_cases <- which(storage$x > capacity)\n  full_cases <- sum(storage$y[which(storage$x > capacity)])\n  cap <- which.min(abs(storage$x-capacity))\n  storage$y[cap] <- storage$y[cap] + full_cases\n  if (cap %in% excess_cases) {\n    excess_cases <- excess_cases[-which(excess_cases==cap)]\n  }\n  storage$y[excess_cases] <- 0\n} \n\nstorage \n\n}\n",
+    "created" : 1482102291695.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3810830935",
+    "id" : "195ABF9A",
+    "lastKnownWriteTime" : 1482105734,
+    "last_content_update" : 1482105734816,
+    "path" : "~/statistics_solar_plus_wind/src/trim_storage.R",
+    "project_path" : "trim_storage.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

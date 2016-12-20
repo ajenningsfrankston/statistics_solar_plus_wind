@@ -1,0 +1,9 @@
+{
+    "path" : "~/statistics_solar_plus_wind/src",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
