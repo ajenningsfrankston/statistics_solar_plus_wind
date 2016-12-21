@@ -100,18 +100,25 @@ for (hr in hrs) {
        title = paste("Time ",hr,":00"," Balance","  Peak Supply/Base Demand ",format(mean_peak/background_demand,digits=2)) 
        title <- paste(title," Storage ",storage_capacity,sep="")
        
+       fname = paste("../plots/balance_",hr,".jpg",sep="")
+       
        p <- ggplot(balance,aes(x=x,y=y)) + geom_line() + ggtitle(title)
        p <- p +labs(y="p(x)")
        print(p)
+       ggsave(fname)
        Sys.sleep(2)
      
   
 }
 
+fname = paste("../plots/storage.jpg",sep="")
 p <- ggplot(storage_trace,aes(x=hrs,y=balance)) + geom_line()
 print(p)
+ggsave(fname)
 Sys.sleep(2)
+fname = paste("../plots/withdraw.jpg",sep="")
 p <- ggplot(storage_trace,aes(x=hrs,y=withdraw)) + geom_line()
 print(p)
+ggsave(fname)
 
 

@@ -35,8 +35,10 @@ for (solar_file in solar_files) {
   
   title = paste("Time of day ",time,":00",sep="")
   
+  fname = paste("../plots/sum_density_",time,".jpg",sep="")
   p <- ggplot(pd,aes(x=x,y=y)) + geom_line() + ggtitle(title)
   print(p)
+  ggsave(fname)
   Sys.sleep(1)
   
 }
